@@ -12,11 +12,11 @@ body{
 
 <body>
 <form>
-	<input type="button" value="ŠJn" onClick="start()"><br>
-	<span id="ransuu">ƒtƒ‰ƒbƒVƒ…ˆÃZ</span>
-	<p>‚±‚±‚É“š‚¦‚ğ“ü—Í</p>
+	<input type="button" value="é–‹å§‹" onClick="start()"><br>
+	<span id="ransuu">ãƒ•ãƒ©ãƒƒã‚·ãƒ¥æš—ç®—</span>
+	<p>ã“ã“ã«ç­”ãˆã‚’å…¥åŠ›</p>
 	<input type="text" id="sum_input">
-	<input type="button" value="“š‚¦‡‚í‚¹‚·‚é" onClick="judge_answer()"><br>
+	<input type="button" value="ç­”ãˆåˆã‚ã›ã™ã‚‹" onClick="judge_answer()"><br>
 </form>
 </body>
 
@@ -36,19 +36,19 @@ body{
 			document.getElementById("ransuu").innerHTML = "-";
 		} else {
 			pushed = true;
-			timer1 = setInterval(random, 1000); /* ’èŠúÀs */
+			timer1 = setInterval(random, 1000); /* å®šæœŸå®Ÿè¡Œ */
 		}
 	}
 
 	function random() {
-		var num = Math.floor(Math.random() * 10 + 1); //—”‚Ìæ“¾
+		var num = Math.floor(Math.random() * 10 + 1); //ä¹±æ•°ã®å–å¾—
 		sum += num;
-		document.getElementById("ransuu").innerHTML = "   "; //—”‚Ìo—Í
+		document.getElementById("ransuu").innerHTML = "   "; //ä¹±æ•°ã®å‡ºåŠ›
 		for(i = 0;i < 100000; i++){
-			document.getElementById("ransuu").innerHTML = "   "; //—”‚Ìo—Í
+			document.getElementById("ransuu").innerHTML = "   "; //ä¹±æ•°ã®å‡ºåŠ›
 		}
 		i = 0;
-		document.getElementById("ransuu").innerHTML = num; //—”‚Ìo—Í
+		document.getElementById("ransuu").innerHTML = num; //ä¹±æ•°ã®å‡ºåŠ›
 		cnt++;
 
 		if(cnt > 5){
@@ -61,9 +61,9 @@ body{
 		const txtvalue = textbox.value;
 
 		if(txtvalue == sum){
-			document.getElementById("ransuu").innerHTML = "³‰ğI"; //—”‚Ìo—Í
+			document.getElementById("ransuu").innerHTML = "æ­£è§£ï¼"; //ä¹±æ•°ã®å‡ºåŠ›
 		} else {
-			document.getElementById("ransuu").innerHTML = "•s³‰ğ"; //—”‚Ìo—Í
+			document.getElementById("ransuu").innerHTML = "ä¸æ­£è§£"; //ä¹±æ•°ã®å‡ºåŠ›
 		}
 
 	}
