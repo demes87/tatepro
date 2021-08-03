@@ -1,0 +1,71 @@
+<style>
+body{
+	background-color: black;
+	color: white;
+}
+
+#ransuu{
+	color:lightgreen;
+	font-size:10rem;
+}
+</style>
+
+<body>
+<form>
+	<input type="button" value="開始" onClick="start()"><br>
+	<span id="ransuu">フラッシュ暗算</span>
+	<p>ここに答えを入力</p>
+	<input type="text" id="sum_input">
+	<input type="button" value="答え合わせする" onClick="judge_answer()"><br>
+</form>
+</body>
+
+<script type="text/javascript">
+	var timer1 = null;
+	var cnt = 1;
+	var pushed = false;
+	var sum = 0;
+	var i = 0;
+
+	function start(){
+		sum = 0;
+		cnt = 1;
+		if(pushed == true){
+			pushed = false;
+			clearInterval(timer1);
+			document.getElementById("ransuu").innerHTML = "-";
+		} else {
+			pushed = true;
+			timer1 = setInterval(random, 1000); /* 定期実行 */
+		}
+	}
+
+	function random() {
+		var num = Math.floor(Math.random() * 10 + 1); //乱数の取得
+		sum += num;
+		document.getElementById("ransuu").innerHTML = "   "; //乱数の出力
+		for(i = 0;i < 100000; i++){
+			document.getElementById("ransuu").innerHTML = "   "; //乱数の出力
+		}
+		i = 0;
+		document.getElementById("ransuu").innerHTML = num; //乱数の出力
+		cnt++;
+
+		if(cnt > 5){
+			clearInterval(timer1);
+		}
+	}
+
+	function judge_answer(){
+		const textbox = document.getElementById("sum_input")
+		const txtvalue = textbox.value;
+
+		if(txtvalue == sum){
+			document.getElementById("ransuu").innerHTML = "正解！"; //乱数の出力
+		} else {
+			document.getElementById("ransuu").innerHTML = "不正解"; //乱数の出力
+		}
+
+	}
+
+</script>
